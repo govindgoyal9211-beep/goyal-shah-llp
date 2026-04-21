@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Goyal Shah & Associates LLP – Chartered Accountants in Sikar, Rajasthan. Expert GST, ITR, Audit, Tax Planning & Business Registration services.">
+<title>Goyal Shah & Associates LLP | Chartered Accountants, Sikar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & VARIABLES ── */
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --navy:#0B1F3A;
+  --navy-deep:#060F1E;
+  --navy-mid:#112340;
+  --teal:#0B8A7A;
+  --teal-light:#12B09D;
+  --teal-pale:#E8F7F5;
+  --gold:#C9932A;
+  --gold-light:#E4B44A;
+  --gold-pale:#FDF8EC;
+  --white:#FFFFFF;
+  --off:#F7F9FC;
+  --g100:#EEF2F7;
+  --g200:#DDE3ED;
+  --g400:#8A99B0;
+  --g600:#4A5568;
+  --text:#18293F;
+  --radius:12px;
+  --shadow:0 4px 24px rgba(11,31,58,0.09);
+  --shadow-lg:0 12px 48px rgba(11,31,58,0.13);
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;color:var(--text);background:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-track{background:var(--off);}
+::-webkit-scrollbar-thumb{background:var(--teal);border-radius:3px;}
+
+/* ── TOPBAR ── */
+.topbar{background:var(--navy-deep);padding:10px 0;}
+.tb-inner{max-width:1280px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+.tb-left{color:rgba(255,255,255,0.45);font-size:12px;display:flex;align-items:center;gap:6px;}
+.tb-right{display:flex;gap:20px;}
+.tb-right a{color:var(--teal-light);font-size:12px;font-weight:500;text-decoration:none;display:flex;align-items:center;gap:5px;transition:color 0.2s;}
+.tb-right a:hover{color:#fff;}
+.tb-dot{width:4px;height:4px;background:var(--teal-light);border-radius:50%;}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:999;background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--g200);box-shadow:var(--shadow);}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:82px;}
+.logo-wrap{display:flex;align-items:center;gap:14px;text-decoration:none;}
+.logo-mark{flex-shrink:0;}
+.logo-words{display:flex;flex-direction:column;}
+.logo-firm{font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:700;color:var(--navy);letter-spacing:0.3px;line-height:1;}
+.logo-sub{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--teal);font-weight:600;margin-top:5px;}
+.nav-menu{display:flex;align-items:center;gap:2px;list-style:none;}
+.nav-menu a{color:var(--g600);font-size:13.5px;font-weight:500;padding:8px 14px;border-radius:8px;text-decoration:none;transition:all 0.2s;}
+.nav-menu a:hover{color:var(--navy);background:var(--g100);}
+.nav-menu .cta-btn{background:var(--teal);color:#fff !important;font-weight:600;border-radius:8px;padding:9px 20px;}
+.nav-menu .cta-btn:hover{background:var(--teal-light);transform:translateY(-1px);}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;border-radius:8px;transition:background 0.2s;}
+.burger:hover{background:var(--g100);}
+.burger span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:all 0.3s;}
+
+/* ── HERO ── */
+.hero{background:var(--navy);min-height:94vh;display:flex;align-items:center;position:relative;overflow:hidden;}
+/* Animated background orbs */
+.hero::before{content:'';position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(11,138,122,0.18) 0%,transparent 70%);top:-200px;right:-200px;pointer-events:none;}
+.hero::after{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(201,147,42,0.1) 0%,transparent 70%);bottom:-150px;left:5%;pointer-events:none;}
+.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:50px 50px;pointer-events:none;}
+.hero-line{position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--teal) 0%,var(--gold) 100%);}
+.hero-inner{max-width:1280px;margin:0 auto;padding:5rem 2rem;display:grid;grid-template-columns:1.15fr 0.85fr;gap:5rem;align-items:center;position:relative;z-index:2;width:100%;}
+
+.hero-kicker{display:inline-flex;align-items:center;gap:10px;margin-bottom:1.5rem;}
+.hero-kicker-line{width:32px;height:2px;background:var(--teal-light);}
+.hero-kicker span{color:var(--teal-light);font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,5vw,4.4rem);color:#fff;line-height:1.08;font-weight:600;margin-bottom:1.4rem;}
+.hero h1 .accent{color:var(--teal-light);}
+.hero h1 .gold-word{color:var(--gold-light);}
+.hero-desc{color:rgba(255,255,255,0.54);font-size:16.5px;line-height:1.85;margin-bottom:2.4rem;max-width:500px;}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:3rem;}
+.btn-primary{background:var(--teal);color:#fff;padding:15px 30px;border-radius:9px;text-decoration:none;font-weight:600;font-size:15px;transition:all 0.25s;display:inline-flex;align-items:center;gap:8px;border:2px solid var(--teal);}
+.btn-primary:hover{background:var(--teal-light);border-color:var(--teal-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(11,138,122,0.35);}
+.btn-secondary{border:2px solid rgba(255,255,255,0.18);color:rgba(255,255,255,0.85);padding:15px 30px;border-radius:9px;text-decoration:none;font-weight:500;font-size:15px;transition:all 0.25s;}
+.btn-secondary:hover{border-color:var(--teal-light);color:var(--teal-light);}
+
+/* Trust badges */
+.hero-trust{display:flex;gap:2rem;flex-wrap:wrap;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.07);}
+.trust-pill{display:flex;align-items:center;gap:7px;}
+.trust-pill::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--teal-light);flex-shrink:0;}
+.trust-pill span{color:rgba(255,255,255,0.45);font-size:12.5px;font-weight:500;}
+
+/* Hero right panel */
+.hero-panel{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:20px;overflow:hidden;backdrop-filter:blur(10px);}
+.hp-head{background:linear-gradient(135deg,var(--teal),var(--teal-light));padding:1.6rem 2rem;display:flex;align-items:center;gap:12px;}
+.hp-head-icon{width:36px;height:36px;background:rgba(255,255,255,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;}
+.hp-title{font-family:'Cormorant Garamond',serif;color:#fff;font-size:1.3rem;font-weight:600;}
+.hp-sub{color:rgba(255,255,255,0.7);font-size:12px;margin-top:1px;}
+.hp-item{display:flex;align-items:flex-start;gap:14px;padding:1.1rem 2rem;border-bottom:1px solid rgba(255,255,255,0.04);transition:background 0.2s;}
+.hp-item:last-child{border:none;}
+.hp-item:hover{background:rgba(255,255,255,0.03);}
+.hp-num{width:28px;height:28px;border-radius:7px;background:rgba(11,138,122,0.25);color:var(--teal-light);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.hp-text strong{color:#fff;display:block;font-weight:500;font-size:14px;margin-bottom:2px;}
+.hp-text span{color:rgba(255,255,255,0.5);font-size:12.5px;}
+
+/* ── SECTION COMMONS ── */
+section{padding:6rem 0;}
+.wrap{max-width:1280px;margin:0 auto;padding:0 2rem;}
+.sec-eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--teal);font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;margin-bottom:0.8rem;}
+.sec-eyebrow::before{content:'';width:22px;height:2px;background:var(--teal);flex-shrink:0;}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.2vw,3rem);color:var(--navy);line-height:1.18;font-weight:600;margin-bottom:0.9rem;}
+.sec-lead{color:var(--g600);font-size:16px;line-height:1.8;max-width:600px;}
+.sec-hd{margin-bottom:3.5rem;}
+.center{text-align:center;}
+.center .sec-eyebrow{justify-content:center;}
+.center .sec-lead{margin:0 auto;}
+.tbar{width:48px;height:3px;background:var(--teal);border-radius:2px;margin:0.9rem 0 1.6rem;}
+.center .tbar{margin:0.9rem auto 1.6rem;}
+
+/* ── SERVICES ── */
+.services{background:var(--off);}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.5rem;}
+.svc-card{background:#fff;border-radius:var(--radius);padding:1.9rem;border:1.5px solid var(--g200);transition:all 0.3s;position:relative;overflow:hidden;cursor:default;}
+.svc-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(11,138,122,0.04),transparent);opacity:0;transition:opacity 0.3s;}
+.svc-card::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--teal);transform:scaleY(0);transform-origin:bottom;transition:transform 0.3s;}
+.svc-card:hover{border-color:rgba(11,138,122,0.3);transform:translateY(-4px);box-shadow:var(--shadow-lg);}
+.svc-card:hover::before{opacity:1;}
+.svc-card:hover::after{transform:scaleY(1);}
+.svc-icon-wrap{width:52px;height:52px;border-radius:12px;background:var(--teal-pale);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:1.2rem;transition:all 0.3s;}
+.svc-card:hover .svc-icon-wrap{background:var(--teal);transform:scale(1.05);}
+.svc-card h3{font-family:'Cormorant Garamond',serif;font-size:1.18rem;color:var(--navy);margin-bottom:0.65rem;font-weight:600;}
+.svc-card p{color:var(--g600);font-size:13.5px;line-height:1.68;}
+.svc-tag{display:inline-block;background:var(--teal-pale);color:var(--teal);font-size:10.5px;font-weight:600;padding:3px 11px;border-radius:50px;margin-top:1rem;border:1px solid rgba(11,138,122,0.15);}
+
+/* ── ABOUT ── */
+.about{background:#fff;}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+.about-panel{background:var(--navy);border-radius:20px;padding:2.8rem;color:#fff;position:relative;overflow:hidden;}
+.about-panel::after{content:'GSA';position:absolute;right:-5px;bottom:-30px;font-family:'Cormorant Garamond',serif;font-size:10rem;font-weight:700;color:rgba(255,255,255,0.025);line-height:1;pointer-events:none;user-select:none;}
+.ap-bar{width:40px;height:3px;background:var(--teal-light);border-radius:2px;margin-bottom:1.3rem;}
+.about-panel h3{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:#fff;font-weight:600;margin-bottom:1rem;}
+.about-panel p{color:rgba(255,255,255,0.58);font-size:14.5px;line-height:1.82;}
+.ab-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:1.8rem;}
+.ab-stat{background:rgba(11,138,122,0.1);border:1px solid rgba(11,138,122,0.18);border-radius:10px;padding:1rem;text-align:center;}
+.ab-stat-val{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--teal-light);font-weight:700;line-height:1;}
+.ab-stat-lbl{color:rgba(255,255,255,0.38);font-size:11px;margin-top:4px;}
+.ab-team{margin-top:1.8rem;border-top:1px solid rgba(255,255,255,0.06);padding-top:1.5rem;display:flex;flex-direction:column;gap:12px;}
+.ab-member{display:flex;align-items:center;gap:12px;}
+.ab-photo{width:44px;height:44px;border-radius:50%;overflow:hidden;flex-shrink:0;border:2px solid rgba(255,255,255,0.12);}
+.ab-photo img{width:100%;height:100%;object-fit:cover;object-position:top;}
+.ab-photo.initials{background:linear-gradient(135deg,var(--teal),var(--teal-light));display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:700;color:#fff;font-size:14px;}
+.ab-photo.adv-init{background:linear-gradient(135deg,#1A56A0,#3B82C4);}
+.ab-name{color:#fff;font-size:13.5px;font-weight:500;display:block;line-height:1.2;}
+.ab-role{color:rgba(255,255,255,0.38);font-size:11.5px;}
+
+.about-text p{color:var(--g600);font-size:15px;line-height:1.82;margin-bottom:1rem;}
+.checklist{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:1.6rem;}
+.checklist li{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--text);}
+.check-ico{width:18px;height:18px;border-radius:50%;background:var(--teal-pale);border:1.5px solid var(--teal);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.check-ico svg{width:10px;height:10px;}
+
+/* ── TEAM ── */
+.team{background:var(--off);}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;}
+.team-card{background:#fff;border-radius:var(--radius);overflow:hidden;border:1.5px solid var(--g200);transition:all 0.3s;position:relative;}
+.team-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:rgba(11,138,122,0.25);}
+.tc-stripe{height:5px;background:linear-gradient(90deg,var(--teal),var(--teal-light));}
+.tc-stripe.adv{background:linear-gradient(90deg,#1A56A0,#3B82C4);}
+.tc-body{padding:2rem;text-align:center;}
+.tc-photo{width:104px;height:104px;border-radius:50%;overflow:hidden;margin:0 auto 1.1rem;border:3px solid var(--teal);box-shadow:0 4px 20px rgba(11,138,122,0.2);}
+.tc-photo img{width:100%;height:100%;object-fit:cover;object-position:top;}
+.tc-photo.adv-border{border-color:#1A56A0;box-shadow:0 4px 20px rgba(26,86,160,0.2);}
+.tc-initials{width:104px;height:104px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--teal-light));display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:700;color:#fff;font-size:28px;margin:0 auto 1.1rem;border:3px solid var(--teal);box-shadow:0 4px 20px rgba(11,138,122,0.2);}
+.tc-name{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--navy);font-weight:700;margin-bottom:4px;}
+.tc-role{font-size:11px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:var(--teal);}
+.tc-role.adv{color:#1A56A0;}
+.tc-footer{padding:1.2rem 1.8rem;border-top:1.5px solid var(--g200);}
+.tc-qual{border-radius:7px;padding:8px 12px;font-size:12.5px;font-weight:500;margin-bottom:0.9rem;text-align:center;}
+.tc-qual.ca{background:var(--teal-pale);color:var(--teal);}
+.tc-qual.adv{background:#EEF4FB;color:#1A56A0;}
+.tc-bio{color:var(--g600);font-size:13px;line-height:1.67;text-align:center;}
+.tc-cta{display:flex;justify-content:center;margin-top:1rem;}
+.tc-cta a{display:inline-flex;align-items:center;gap:6px;background:#EEF4FB;color:#1A56A0;border:1px solid rgba(26,86,160,0.2);padding:7px 18px;border-radius:50px;text-decoration:none;font-size:12.5px;font-weight:600;transition:all 0.2s;}
+.tc-cta a:hover{background:#1A56A0;color:#fff;}
+
+/* ── WHY US ── */
+.why{background:var(--navy);padding:6rem 0;}
+.why-head{text-align:center;margin-bottom:3.5rem;}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.why-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:var(--radius);padding:2.2rem;transition:all 0.3s;}
+.why-card:hover{background:rgba(255,255,255,0.07);border-color:rgba(11,138,122,0.3);transform:translateY(-3px);}
+.wc-icon{width:50px;height:50px;border-radius:12px;background:rgba(11,138,122,0.15);border:1px solid rgba(11,138,122,0.2);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:1.3rem;}
+.why-card h3{font-family:'Cormorant Garamond',serif;color:#fff;font-size:1.15rem;font-weight:600;margin-bottom:0.5rem;}
+.why-card p{color:rgba(255,255,255,0.46);font-size:13.5px;line-height:1.68;}
+
+/* ── PROCESS ── */
+.process{background:#fff;}
+.process-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;margin-top:0.5rem;}
+.process-grid::before{content:'';position:absolute;top:36px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,var(--teal),var(--teal-light));opacity:0.25;z-index:0;}
+.ps{text-align:center;padding:0 0.7rem;position:relative;z-index:1;}
+.ps-num{width:72px;height:72px;border-radius:50%;background:#fff;border:2.5px solid var(--teal);color:var(--teal);font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 1.3rem;transition:all 0.3s;}
+.ps:hover .ps-num{background:var(--teal);color:#fff;transform:scale(1.05);}
+.ps h3{font-family:'Cormorant Garamond',serif;color:var(--navy);font-size:1rem;font-weight:600;margin-bottom:0.4rem;}
+.ps p{color:var(--g600);font-size:12.5px;line-height:1.65;}
+
+/* ── TESTIMONIALS ── */
+.testi{background:var(--off);}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.testi-card{background:#fff;border-radius:var(--radius);padding:2rem;border:1.5px solid var(--g200);position:relative;transition:all 0.3s;}
+.testi-card:hover{border-color:rgba(11,138,122,0.2);box-shadow:var(--shadow);}
+.tq-mark{font-family:'Cormorant Garamond',serif;font-size:5rem;color:rgba(11,138,122,0.07);line-height:0.8;position:absolute;top:1.5rem;right:1.5rem;}
+.stars{color:var(--gold-light);font-size:14px;letter-spacing:2px;margin-bottom:1rem;}
+.testi-text{color:var(--g600);font-size:14px;line-height:1.8;margin-bottom:1.5rem;font-style:italic;}
+.testi-author{display:flex;align-items:center;gap:10px;padding-top:1rem;border-top:1px solid var(--g200);}
+.ta-av{width:40px;height:40px;border-radius:50%;background:var(--teal);color:#fff;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ta-name{font-size:14px;font-weight:600;color:var(--navy);}
+.ta-role{font-size:12px;color:var(--g400);}
+
+/* ── CONTACT ── */
+.contact{background:#fff;}
+.contact-center{max-width:680px;margin:0 auto;}
+.contact-panel{background:var(--navy);border-radius:20px;padding:2.8rem;position:relative;overflow:hidden;}
+.contact-panel::before{content:'';position:absolute;top:-80px;right:-80px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(11,138,122,0.15),transparent 70%);}
+.cp-title{font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:#fff;font-weight:600;margin-bottom:4px;}
+.cp-sub{color:rgba(255,255,255,0.35);font-size:13px;margin-bottom:2.2rem;}
+.ci-row{display:flex;gap:14px;margin-bottom:1.5rem;}
+.ci-ico{width:44px;height:44px;border-radius:10px;background:rgba(11,138,122,0.15);display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0;}
+.ci-lbl{font-size:10px;color:rgba(255,255,255,0.32);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:3px;}
+.ci-val{color:#fff;font-size:14.5px;font-weight:500;line-height:1.6;}
+.ci-val a{color:var(--teal-light);text-decoration:none;transition:color 0.2s;}
+.ci-val a:hover{color:#fff;}
+.wa-row{margin-top:2rem;background:rgba(11,138,122,0.12);border:1px solid rgba(11,138,122,0.22);border-radius:10px;padding:1.1rem 1.4rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+.wa-row span{color:rgba(255,255,255,0.6);font-size:13.5px;}
+.wa-row a{background:var(--teal);color:#fff;padding:9px 20px;border-radius:7px;text-decoration:none;font-weight:600;font-size:13px;transition:background 0.2s;white-space:nowrap;}
+.wa-row a:hover{background:var(--teal-light);}
+
+/* ── MAP BAR ── */
+.map-bar{background:var(--navy-deep);padding:1.8rem 0;}
+.mb-inner{max-width:1280px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+.mb-text .t1{color:var(--teal-light);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;font-weight:600;margin-bottom:5px;}
+.mb-text .t2{color:#fff;font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600;}
+.mb-text .t3{color:rgba(255,255,255,0.38);font-size:13px;margin-top:3px;}
+.map-btn{background:var(--teal);color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:600;font-size:13.5px;transition:all 0.2s;white-space:nowrap;}
+.map-btn:hover{background:var(--teal-light);transform:translateY(-1px);}
+
+/* ── FOOTER ── */
+footer{background:var(--navy-deep);border-top:1px solid rgba(11,138,122,0.15);padding:4rem 0 2rem;}
+.footer-grid{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem;}
+.footer-logo-row{display:flex;align-items:center;gap:12px;margin-bottom:1.2rem;}
+.footer-desc{color:rgba(255,255,255,0.33);font-size:13px;line-height:1.78;}
+.footer-badges{display:flex;gap:8px;margin-top:1.4rem;flex-wrap:wrap;}
+.f-badge{background:rgba(11,138,122,0.1);border:1px solid rgba(11,138,122,0.18);color:var(--teal-light);padding:4px 13px;border-radius:50px;font-size:10.5px;font-weight:600;letter-spacing:0.8px;}
+.fc h4{color:rgba(255,255,255,0.28);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;font-weight:600;margin-bottom:1.2rem;}
+.fc ul{list-style:none;}
+.fc li{margin-bottom:9px;}
+.fc a{color:rgba(255,255,255,0.42);text-decoration:none;font-size:13px;transition:color 0.2s;}
+.fc a:hover{color:var(--teal-light);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.05);padding-top:1.6rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+.footer-bottom p{color:rgba(255,255,255,0.2);font-size:12px;}
+
+/* ── WHATSAPP FLOAT ── */
+.wa-float{position:fixed;bottom:28px;right:28px;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4),0 0 0 0 rgba(37,211,102,0.25);z-index:998;text-decoration:none;animation:pulse-wa 2.5s infinite;}
+@keyframes pulse-wa{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.4),0 0 0 0 rgba(37,211,102,0.25);}50%{box-shadow:0 4px 20px rgba(37,211,102,0.4),0 0 0 10px rgba(37,211,102,0);}}
+.wa-float:hover{transform:scale(1.1);}
+.wa-float svg{width:28px;height:28px;fill:#fff;}
+
+/* ── SECTION DIVIDER ── */
+.wave{display:block;width:100%;overflow:hidden;line-height:0;}
+
+/* ── SCROLL REVEAL ── */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.reveal.visible{opacity:1;transform:none;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1100px){
+  .team-grid{grid-template-columns:repeat(2,1fr);}
+  .why-grid{grid-template-columns:repeat(2,1fr);}
+  .testi-grid{grid-template-columns:repeat(2,1fr);}
+  .process-grid{grid-template-columns:repeat(3,1fr);gap:1rem;}
+  .process-grid::before{display:none;}
+  .about-grid{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  .hero-inner{grid-template-columns:1fr;gap:3rem;}
+  .hero{min-height:auto;padding:2rem 0;}
+}
+@media(max-width:768px){
+  .team-grid,.why-grid,.testi-grid{grid-template-columns:1fr;}
+  .nav-menu{display:none;position:absolute;top:82px;left:0;right:0;background:#fff;flex-direction:column;padding:1rem 2rem 1.5rem;border-bottom:2px solid var(--g200);box-shadow:var(--shadow-lg);z-index:999;}
+  .nav-menu.open{display:flex;}
+  .nav-menu a{padding:10px 14px;}
+  .burger{display:flex;}
+  .topbar{display:none;}
+  .process-grid{grid-template-columns:repeat(2,1fr);}
+  section{padding:4rem 0;}
+}
+@media(max-width:520px){
+  .process-grid{grid-template-columns:1fr;}
+  .checklist{grid-template-columns:1fr;}
+  .ab-stats{grid-template-columns:1fr 1fr;}
+  .footer-grid{grid-template-columns:1fr;}
+  .hero h1{font-size:2.6rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/918696492651" class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- Topbar -->
+<div class="topbar">
+  <div class="tb-inner">
+    <div class="tb-left">
+      <span>📍</span>
+      <span>Office No. 311, 3rd Floor, Pulak Tower, Kotwali Road, Sikar – 332001 (Raj.)</span>
+    </div>
+    <div class="tb-right">
+      <a href="tel:+918696492651"><span>📞</span>+91 86964 92651</a>
+      <div class="tb-dot"></div>
+      <a href="mailto:info.goyalshahassociates@gmail.com"><span>✉</span>info.goyalshahassociates@gmail.com</a>
+    </div>
+  </div>
+</div>
+
+<!-- Nav -->
+<nav>
+  <div class="nav-inner">
+    <a class="logo-wrap" href="#home">
+      <!-- SVG Logo -->
+      <div class="logo-mark">
+        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="28" cy="28" r="27" fill="#0B1F3A"/>
+          <circle cx="28" cy="28" r="27" stroke="#0B8A7A" stroke-width="1.2" stroke-opacity="0.5"/>
+          <!-- Teal arc -->
+          <path d="M 10 28 A 18 18 0 0 1 46 28" stroke="#0B8A7A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <!-- Scale crossbar -->
+          <line x1="17" y1="25" x2="39" y2="25" stroke="#C9932A" stroke-width="2.2" stroke-linecap="round"/>
+          <!-- Pillar -->
+          <line x1="28" y1="19" x2="28" y2="37" stroke="#C9932A" stroke-width="2.2" stroke-linecap="round"/>
+          <!-- Left pan -->
+          <path d="M 14 25 Q 17.5 31 21 25" stroke="#C9932A" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <!-- Right pan -->
+          <path d="M 35 25 Q 38.5 31 42 25" stroke="#C9932A" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <!-- Base -->
+          <line x1="24" y1="37" x2="32" y2="37" stroke="#C9932A" stroke-width="2.2" stroke-linecap="round"/>
+          <!-- Diamond top -->
+          <path d="M28 11 L30.5 14.5 L28 18 L25.5 14.5 Z" fill="#C9932A"/>
+          <!-- CA text -->
+          <text x="28" y="48" font-family="Georgia,'Times New Roman',serif" font-size="8.5" font-weight="700" fill="#0B8A7A" text-anchor="middle" letter-spacing="1.5">CA</text>
+        </svg>
+      </div>
+      <div class="logo-words">
+        <span class="logo-firm">Goyal Shah &amp; Associates LLP</span>
+        <span class="logo-sub">Chartered Accountants · Sikar</span>
+      </div>
+    </a>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#contact" class="cta-btn">Free Consultation</a></li>
+    </ul>
+    <div class="burger" id="burger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-line"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-kicker">
+        <div class="hero-kicker-line"></div>
+        <span>Chartered Accountants &amp; Legal Advisors — Sikar, Rajasthan</span>
+      </div>
+      <h1>Expert <span class="gold-word">Financial</span> &amp;<br><span class="accent">Tax Solutions</span><br>You Can Trust</h1>
+      <p class="hero-desc">Goyal Shah &amp; Associates LLP delivers precise audit, taxation, GST compliance, and business advisory — backed by qualified CAs and an experienced Advocate &amp; Tax Consultant in Sikar.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Get Free Consultation →</a>
+        <a href="#services" class="btn-secondary">Explore Services</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-pill"><span>ICAI Registered Firm</span></div>
+        <div class="trust-pill"><span>LLP Registered Entity</span></div>
+        <div class="trust-pill"><span>Est. 2024</span></div>
+        <div class="trust-pill"><span>Sikar, Rajasthan</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="hero-panel">
+        <div class="hp-head">
+          <div class="hp-head-icon">📋</div>
+          <div>
+            <div class="hp-title">Our Core Practice Areas</div>
+            <div class="hp-sub">Full-service CA &amp; Legal expertise</div>
+          </div>
+        </div>
+        <div class="hp-item"><div class="hp-num">01</div><div class="hp-text"><strong>GST Registration &amp; Returns</strong><span>End-to-end GST compliance &amp; advisory</span></div></div>
+        <div class="hp-item"><div class="hp-num">02</div><div class="hp-text"><strong>Income Tax Filing (ITR)</strong><span>Individuals, firms, companies &amp; HUF</span></div></div>
+        <div class="hp-item"><div class="hp-num">03</div><div class="hp-text"><strong>Audit &amp; Assurance</strong><span>Statutory, Tax, GST &amp; Internal audits</span></div></div>
+        <div class="hp-item"><div class="hp-num">04</div><div class="hp-text"><strong>Business Registration</strong><span>Company, LLP, OPC &amp; Startup India</span></div></div>
+        <div class="hp-item"><div class="hp-num">05</div><div class="hp-text"><strong>Tax Litigation &amp; Appeals</strong><span>Notices, assessments &amp; CIT(A) appeals</span></div></div>
+        <div class="hp-item"><div class="hp-num">06</div><div class="hp-text"><strong>Legal &amp; Tax Advisory</strong><span>Advocate-backed legal consultation</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-hd center reveal">
+      <div class="sec-eyebrow">What We Offer</div>
+      <h2 class="sec-title">Comprehensive CA &amp; Legal Services</h2>
+      <div class="tbar"></div>
+      <p class="sec-lead">From startup registration to complex tax litigation — end-to-end financial, compliance, and legal services for individuals and businesses across Rajasthan.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card reveal"><div class="svc-icon-wrap">📋</div><h3>GST Services</h3><p>GST Registration, GSTR-1, GSTR-3B filing, GST Audit, refund claims and advisory on complex GST matters for all business types.</p><span class="svc-tag">Indirect Tax</span></div>
+      <div class="svc-card reveal"><div class="svc-icon-wrap">💰</div><h3>Income Tax (ITR Filing)</h3><p>ITR filing for salaried individuals, businesses, firms, HUFs and companies. Advance tax, TDS returns and income tax notice handling.</p><span class="svc-tag">Direct Tax</span></div>
+      <div class="svc-card reveal"><div class="svc-icon-wrap">🔎</div><h3>Statutory Audit</h3><p>Mandatory audit of companies and LLPs. Financial statement review, internal controls assessment and full MCA compliance.</p><span class="svc-tag">Audit</span></div>
+      <div class="svc-card reveal"><div class="svc-icon-wrap">📑</div><h3>Tax Audit (Sec 44AB)</h3><p>Tax audit for businesses and professionals crossing prescribed limits. Preparation and filing of Form 3CA/3CB and 3CD.</p><span class="svc-tag">Audit</span></div>
+      <div class="svc-card reveal"><div class="svc-icon-wrap">🏗️</div><h3>Business Registration</h3><p>Company, LLP, OPC, Partnership, Sole Proprietorship, MSME/Udyam and Startup India registration handled end-to-end.</p><span class="svc-tag">Business Setup</span></div>
+      <div class="svc-card reveal"><div class="svc-icon-wrap">📊</div><h3>Accounting &amp; Bookkeeping</h3><p>Complete bookkeeping, accounts finalization, balance sheets, P&amp;L statements and management reporting for all business sizes.</p><span class="svc-tag">Accounting</span></div>
+      <div class="svc-card reveal"><div class="svc-icon-wrap">🏦</div><h3>TDS / TCS Compliance</h3><p>TDS deduction, deposit, quarterly return filing (24Q, 26Q, 27Q), Form 16/16A generation and TDS correction statements.</p><span class="svc-tag">Tax Compliance</span></div>
+      <div class="svc-card reveal"><div class="svc-icon-wrap">🏢</div><h3>ROC &amp; MCA Filings</h3><p>Annual returns, DIR-3 KYC, ADT-1, AOC-4, MGT-7 and all secretarial compliances for companies and LLPs registered with MCA.</p><span class="svc-tag">Corporate Law</span></div>
+      <div class="svc-card reveal"><div class="svc-icon-wrap">📈</div><h3>Tax Planning &amp; Advisory</h3><p>Strategic tax planning for individuals, HUFs and businesses to optimise tax liability through legal investments and deductions.</p><span class="svc-tag">Advisory</span></div>
+      <div class="svc-card reveal"><div class="svc-icon-wrap">⚖️</div><h3>IT Notices &amp; Litigation</h3><p>Handling scrutiny assessments, notices under Sec 143(1)/143(2)/147, faceless assessment and CIT(A) &amp; ITAT appeals.</p><span class="svc-tag">Litigation</span></div>
+      <div class="svc-card reveal"><div class="svc-icon-wrap">🌐</div><h3>NRI Taxation</h3><p>FEMA compliance, NRI ITR filing, repatriation of funds, DTAA benefits and advisory on investments in India for NRIs.</p><span class="svc-tag">International</span></div>
+      <div class="svc-card reveal"><div class="svc-icon-wrap">🛡️</div><h3>Internal Audit</h3><p>Risk-based internal audits for process improvement, internal control review, fraud detection and operational efficiency.</p><span class="svc-tag">Audit</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="about-panel">
+          <div class="ap-bar"></div>
+          <h3>Goyal Shah &amp; Associates LLP</h3>
+          <p>A professionally managed Chartered Accountancy firm in Sikar, Rajasthan. We combine deep technical expertise with personalised service to help clients navigate complex financial and regulatory environments with confidence.</p>
+          <div class="ab-stats">
+            <div class="ab-stat"><div class="ab-stat-val">2</div><div class="ab-stat-lbl">Qualified CAs</div></div>
+            <div class="ab-stat"><div class="ab-stat-val">LLP</div><div class="ab-stat-lbl">Registered Firm</div></div>
+            <div class="ab-stat"><div class="ab-stat-val">Est.</div><div class="ab-stat-lbl">2024</div></div>
+            <div class="ab-stat"><div class="ab-stat-val">ICAI</div><div class="ab-stat-lbl">Registered</div></div>
+          </div>
+          <div class="ab-team">
+            <div class="ab-member">
+              <div class="ab-photo"><img src="archit.jpeg" alt="CA Archit Goyal"></div>
+              <div><span class="ab-name">CA Archit Goyal</span><span class="ab-role">LLB, B.Com | Partner</span></div>
+            </div>
+            <div class="ab-member">
+              <div class="ab-photo initials">SS</div>
+              <div><span class="ab-name">CA Shalini Shah</span><span class="ab-role">ACA, M.Com | Partner</span></div>
+            </div>
+            <div class="ab-member">
+              <div class="ab-photo"><img src="mukesh.jpeg" alt="Adv. Mukesh Chokarika"></div>
+              <div><span class="ab-name">Adv. Mukesh Chokarika</span><span class="ab-role">M.Com., LLB., D.L.L. | Legal Advisor</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-text reveal">
+        <div class="sec-eyebrow">About the Firm</div>
+        <h2 class="sec-title">Your Trusted Financial Partner in Sikar</h2>
+        <div class="tbar"></div>
+        <p>Goyal Shah &amp; Associates LLP is a full-service Chartered Accountancy firm dedicated to providing high-quality professional services. Located at Office No. 311, 3rd Floor, Pulak Tower, Kotwali Road, Sikar — we serve clients across Rajasthan and beyond.</p>
+        <p>Our team of qualified Chartered Accountants, supported by a seasoned Advocate &amp; Tax Consultant, brings together diverse expertise across taxation, auditing, corporate law, and business advisory.</p>
+        <p>We believe in building long-term relationships, understanding unique client needs, and providing proactive guidance that helps businesses grow and stay fully compliant.</p>
+        <ul class="checklist">
+          <li><span class="check-ico"><svg viewBox="0 0 10 10"><path d="M1.5 5l2.5 2.5 5-5" stroke="#0B8A7A" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></span>ICAI Registered Firm</li>
+          <li><span class="check-ico"><svg viewBox="0 0 10 10"><path d="M1.5 5l2.5 2.5 5-5" stroke="#0B8A7A" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></span>LLP Registered Entity</li>
+          <li><span class="check-ico"><svg viewBox="0 0 10 10"><path d="M1.5 5l2.5 2.5 5-5" stroke="#0B8A7A" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></span>Tax Litigation Expertise</li>
+          <li><span class="check-ico"><svg viewBox="0 0 10 10"><path d="M1.5 5l2.5 2.5 5-5" stroke="#0B8A7A" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></span>GST Practitioners</li>
+          <li><span class="check-ico"><svg viewBox="0 0 10 10"><path d="M1.5 5l2.5 2.5 5-5" stroke="#0B8A7A" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></span>ROC &amp; Secretarial Experts</li>
+          <li><span class="check-ico"><svg viewBox="0 0 10 10"><path d="M1.5 5l2.5 2.5 5-5" stroke="#0B8A7A" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></span>Startup-Friendly Services</li>
+          <li><span class="check-ico"><svg viewBox="0 0 10 10"><path d="M1.5 5l2.5 2.5 5-5" stroke="#0B8A7A" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></span>Transparent Fee Structure</li>
+          <li><span class="check-ico"><svg viewBox="0 0 10 10"><path d="M1.5 5l2.5 2.5 5-5" stroke="#0B8A7A" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></span>Confidential &amp; Ethical</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section class="team" id="team">
+  <div class="wrap">
+    <div class="sec-hd center reveal">
+      <div class="sec-eyebrow">Meet the Team</div>
+      <h2 class="sec-title">Our Professionals</h2>
+      <div class="tbar"></div>
+      <p class="sec-lead">Qualified Chartered Accountants and a seasoned Advocate — offering integrated financial, tax, and legal expertise under one roof.</p>
+    </div>
+    <div class="team-grid">
+      <!-- CA Archit Goyal -->
+      <div class="team-card reveal">
+        <div class="tc-stripe"></div>
+        <div class="tc-body">
+          <div class="tc-photo"><img src="archit.jpeg" alt="CA Archit Goyal"></div>
+          <div class="tc-name">CA Archit Goyal</div>
+          <div class="tc-role">Partner · Chartered Accountant</div>
+        </div>
+        <div class="tc-footer">
+          <div class="tc-qual ca">LLB, B.Com — ICAI Member</div>
+          <p class="tc-bio">Specialises in GST compliance, income tax, audit and legal matters. Brings a unique dual CA + Law qualification to every client engagement for comprehensive solutions.</p>
+        </div>
+      </div>
+      <!-- CA Shalini Shah -->
+      <div class="team-card reveal">
+        <div class="tc-stripe"></div>
+        <div class="tc-body">
+          <div class="tc-initials">SS</div>
+          <div class="tc-name">CA Shalini Shah</div>
+          <div class="tc-role">Partner · Chartered Accountant</div>
+        </div>
+        <div class="tc-footer">
+          <div class="tc-qual ca">ACA, M.Com — ICAI Member</div>
+          <p class="tc-bio">Expert in corporate accounting, ROC compliances, financial planning and advisory. Manages bookkeeping, account finalization and statutory audit engagements.</p>
+        </div>
+      </div>
+      <!-- Adv. Mukesh Chokarika -->
+      <div class="team-card reveal">
+        <div class="tc-stripe adv"></div>
+        <div class="tc-body">
+          <div class="tc-photo adv-border"><img src="mukesh.jpeg" alt="Adv. Mukesh Chokarika"></div>
+          <div class="tc-name">Mukesh Chokarika</div>
+          <div class="tc-role adv">Advocate &amp; Tax Consultant</div>
+        </div>
+        <div class="tc-footer">
+          <div class="tc-qual adv">M.Com., LLB., D.L.L. — Legal Advisor</div>
+          <p class="tc-bio">Seasoned advocate and tax consultant with expertise in tax litigation, IT appeals, GST disputes, and legal advisory. Strengthens the firm's capability.</p>
+          <div class="tc-cta"><a href="tel:+919414315538">📞 +91 94143 15538</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Us -->
+<section class="why">
+  <div class="wrap">
+    <div class="why-head reveal">
+      <div class="sec-eyebrow" style="color:var(--teal-light);justify-content:center;display:inline-flex;margin:0 auto 0.8rem;display:flex;">Why Choose Us</div>
+      <h2 class="sec-title" style="color:#fff;text-align:center;">Why Clients Trust GSA</h2>
+      <div class="tbar" style="margin:0.9rem auto 0;background:var(--teal-light);"></div>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal"><div class="wc-icon">🎯</div><h3>Accuracy &amp; Precision</h3><p>Zero-error approach to filings and compliance with thorough review processes at every step of every engagement.</p></div>
+      <div class="why-card reveal"><div class="wc-icon">⏰</div><h3>Timely Delivery</h3><p>Never miss a deadline. We proactively manage due dates and send reminders to keep you fully compliant.</p></div>
+      <div class="why-card reveal"><div class="wc-icon">🔐</div><h3>Data Confidentiality</h3><p>Your financial and personal data is handled with utmost confidentiality and strict professional ethics at all times.</p></div>
+      <div class="why-card reveal"><div class="wc-icon">⚖️</div><h3>CA + Legal Expertise</h3><p>Dual CA + LLB + Advocate qualification ensures comprehensive financial, tax and legal advisory under one roof.</p></div>
+      <div class="why-card reveal"><div class="wc-icon">📞</div><h3>Responsive Support</h3><p>Quick response via phone, WhatsApp or email. Always reachable when you need guidance on any matter.</p></div>
+      <div class="why-card reveal"><div class="wc-icon">💎</div><h3>Transparent Fees</h3><p>Clear, competitive pricing with no hidden costs. Quality CA and legal services made accessible for every budget.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="sec-hd center reveal">
+      <div class="sec-eyebrow">How It Works</div>
+      <h2 class="sec-title">Our Simple 5-Step Process</h2>
+      <div class="tbar"></div>
+    </div>
+    <div class="process-grid">
+      <div class="ps reveal"><div class="ps-num">1</div><h3>Free Consultation</h3><p>Contact us for a free initial consultation to understand your full requirements and scope.</p></div>
+      <div class="ps reveal"><div class="ps-num">2</div><h3>Document Collection</h3><p>We guide you on exact documents needed and collect them securely via WhatsApp or email.</p></div>
+      <div class="ps reveal"><div class="ps-num">3</div><h3>Analysis &amp; Review</h3><p>Our CAs analyse your situation and prepare the most optimal financial or compliance strategy.</p></div>
+      <div class="ps reveal"><div class="ps-num">4</div><h3>Execution</h3><p>We file returns, complete registrations or prepare audit reports with full accuracy and care.</p></div>
+      <div class="ps reveal"><div class="ps-num">5</div><h3>Report &amp; Follow-up</h3><p>You receive all reports and acknowledgements. We stay available for future queries or notices.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testi" id="testimonials">
+  <div class="wrap">
+    <div class="sec-hd center reveal">
+      <div class="sec-eyebrow">Client Reviews</div>
+      <h2 class="sec-title">What Our Clients Say</h2>
+      <div class="tbar"></div>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="tq-mark">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">Excellent service! CA Archit Goyal handled our GST registration and monthly returns with great professionalism. Always available to answer queries. Highly recommended firm in Sikar.</p>
+        <div class="testi-author"><div class="ta-av">RK</div><div><div class="ta-name">Ramesh Kumar</div><div class="ta-role">Proprietor, Sikar</div></div></div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="tq-mark">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">CA Shalini Shah guided us through our company incorporation and tax planning. The team is knowledgeable, prompt, and genuinely cares about client interests. Excellent experience.</p>
+        <div class="testi-author"><div class="ta-av">PS</div><div><div class="ta-name">Priya Sharma</div><div class="ta-role">Director, Startup Founder</div></div></div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="tq-mark">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">They handled my income tax notice with expertise and got a very favourable assessment. The fee was reasonable and the turnaround was quick. I completely trust this firm.</p>
+        <div class="testi-author"><div class="ta-av">VB</div><div><div class="ta-name">Vijay Bansal</div><div class="ta-role">Businessman, Sikar</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="sec-hd center reveal" style="margin-bottom:3rem;">
+      <div class="sec-eyebrow">Get In Touch</div>
+      <h2 class="sec-title">Contact Us Today</h2>
+      <div class="tbar"></div>
+      <p class="sec-lead">Reach out for a free consultation. We are here to assist with all your tax, audit, and business compliance needs.</p>
+    </div>
+    <div class="contact-center reveal">
+      <div class="contact-panel">
+        <div class="cp-title">Goyal Shah &amp; Associates LLP</div>
+        <div class="cp-sub">Chartered Accountants | Sikar, Rajasthan</div>
+        <div class="ci-row"><div class="ci-ico">📍</div><div><div class="ci-lbl">Office Address</div><div class="ci-val">Office No. 311, 3rd Floor, Pulak Tower,<br>Kotwali Road, Sikar – 332001 (Rajasthan)</div></div></div>
+        <div class="ci-row"><div class="ci-ico">📞</div><div><div class="ci-lbl">Phone / WhatsApp</div><div class="ci-val"><a href="tel:+918696492651">+91 86964 92651</a></div></div></div>
+        <div class="ci-row"><div class="ci-ico">📧</div><div><div class="ci-lbl">Email</div><div class="ci-val"><a href="mailto:info.goyalshahassociates@gmail.com">info.goyalshahassociates@gmail.com</a></div></div></div>
+        <div class="ci-row"><div class="ci-ico">🕐</div><div><div class="ci-lbl">Office Hours</div><div class="ci-val">Mon – Sat: 10:00 AM – 7:00 PM<br>Sunday: By Appointment Only</div></div></div>
+        <div class="wa-row"><span>💬 Quick connect on WhatsApp</span><a href="https://wa.me/918696492651" target="_blank" rel="noopener">Chat Now →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Map Bar -->
+<div class="map-bar">
+  <div class="mb-inner">
+    <div class="mb-text">
+      <div class="t1">Find Our Office</div>
+      <div class="t2">Pulak Tower, Kotwali Road, Sikar</div>
+      <div class="t3">Office No. 311, 3rd Floor, Sikar – 332001, Rajasthan</div>
+    </div>
+    <a href="https://maps.google.com/?q=Pulak+Tower+Kotwali+Road+Sikar+Rajasthan" target="_blank" rel="noopener" class="map-btn">Open in Maps ↗</a>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo-row">
+          <svg width="42" height="42" viewBox="0 0 56 56" fill="none">
+            <circle cx="28" cy="28" r="27" fill="#0B1F3A"/>
+            <circle cx="28" cy="28" r="27" stroke="#0B8A7A" stroke-width="1.2" stroke-opacity="0.5"/>
+            <path d="M 10 28 A 18 18 0 0 1 46 28" stroke="#0B8A7A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <line x1="17" y1="25" x2="39" y2="25" stroke="#C9932A" stroke-width="2.2" stroke-linecap="round"/>
+            <line x1="28" y1="19" x2="28" y2="37" stroke="#C9932A" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M 14 25 Q 17.5 31 21 25" stroke="#C9932A" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path d="M 35 25 Q 38.5 31 42 25" stroke="#C9932A" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <line x1="24" y1="37" x2="32" y2="37" stroke="#C9932A" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M28 11 L30.5 14.5 L28 18 L25.5 14.5 Z" fill="#C9932A"/>
+            <text x="28" y="48" font-family="Georgia,serif" font-size="8.5" font-weight="700" fill="#0B8A7A" text-anchor="middle" letter-spacing="1.5">CA</text>
+          </svg>
+          <div>
+            <div style="font-family:'Cormorant Garamond',serif;color:#fff;font-size:17px;font-weight:700;">Goyal Shah &amp; Associates LLP</div>
+            <div style="color:var(--teal-light);font-size:9px;letter-spacing:3px;text-transform:uppercase;font-weight:600;margin-top:4px;">Chartered Accountants</div>
+          </div>
+        </div>
+        <p class="footer-desc">A Chartered Accountancy firm providing expert financial, taxation, audit, and compliance services from Sikar, Rajasthan. Est. 2024. ICAI Registered | LLP Firm.</p>
+        <div class="footer-badges">
+          <span class="f-badge">ICAI Registered</span>
+          <span class="f-badge">LLP Firm</span>
+          <span class="f-badge">Est. 2024</span>
+        </div>
+      </div>
+      <div class="fc"><h4>Tax Services</h4><ul>
+        <li><a href="#services">Income Tax (ITR)</a></li>
+        <li><a href="#services">GST Returns</a></li>
+        <li><a href="#services">TDS Returns</a></li>
+        <li><a href="#services">Tax Planning</a></li>
+        <li><a href="#services">NRI Taxation</a></li>
+        <li><a href="#services">Tax Notices</a></li>
+      </ul></div>
+      <div class="fc"><h4>Audit Services</h4><ul>
+        <li><a href="#services">Statutory Audit</a></li>
+        <li><a href="#services">Tax Audit</a></li>
+        <li><a href="#services">GST Audit</a></li>
+        <li><a href="#services">Internal Audit</a></li>
+        <li><a href="#services">Bank Audit</a></li>
+        <li><a href="#services">Stock Audit</a></li>
+      </ul></div>
+      <div class="fc"><h4>Business Setup</h4><ul>
+        <li><a href="#services">Company Registration</a></li>
+        <li><a href="#services">LLP Registration</a></li>
+        <li><a href="#services">GST Registration</a></li>
+        <li><a href="#services">MSME Registration</a></li>
+        <li><a href="#services">ROC Filings</a></li>
+        <li><a href="#services">Accounting</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Goyal Shah &amp; Associates LLP. All rights reserved. | Office No. 311, Pulak Tower, Kotwali Road, Sikar – 332001 (Raj.)</p>
+      <p style="color:rgba(255,255,255,0.15);font-size:11px;">Chartered Accountants &amp; Legal Advisors</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── MOBILE MENU ──
+const burger=document.getElementById('burger');
+const menu=document.getElementById('navMenu');
+burger.addEventListener('click',()=>{
+  menu.classList.toggle('open');
+  const spans=burger.querySelectorAll('span');
+  if(menu.classList.contains('open')){
+    spans[0].style.transform='rotate(45deg) translate(5px,5px)';
+    spans[1].style.opacity='0';
+    spans[2].style.transform='rotate(-45deg) translate(5px,-5px)';
+  } else {
+    spans.forEach(s=>{s.style.transform='';s.style.opacity='';});
+  }
+});
+// Close on link click
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  menu.classList.remove('open');
+  burger.querySelectorAll('span').forEach(s=>{s.style.transform='';s.style.opacity='';});
+}));
+
+// ── SCROLL REVEAL ──
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      setTimeout(()=>e.target.classList.add('visible'),i*60);
+      observer.unobserve(e.target);
+    }
+  });
+},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+// ── STICKY NAV SHADOW ──
+window.addEventListener('scroll',()=>{
+  document.querySelector('nav').style.boxShadow=window.scrollY>10?'0 4px 28px rgba(11,31,58,0.12)':'0 2px 16px rgba(11,31,58,0.06)';
+});
+</script>
+</body>
+</html>
